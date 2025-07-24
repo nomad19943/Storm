@@ -17,3 +17,6 @@ async def send_signal(request: Request):
     async with httpx.AsyncClient() as client:
         await client.post(url, json=payload)
     return {"status": "sent"}
+@app.get("/")
+def home():
+    return {"status": "online"}
